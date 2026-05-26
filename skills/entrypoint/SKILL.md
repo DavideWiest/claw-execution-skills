@@ -14,9 +14,9 @@ not silently replace a worker on substantial delegated work merely because it
 could make edits itself.
 
 Read this skill when orienting a coding, ML research, or build task. It is the
-source of truth for lifecycle selection, interaction modifiers, and
-escalation. Use `execution` as the primary implementation and continuation
-skill once work is underway.
+source of truth for lifecycle selection and escalation. Use `execution` as
+the primary implementation and continuation skill once work is underway; it
+owns behavior modifiers.
 
 ### Reasoning Level
 
@@ -64,8 +64,8 @@ in an existing project, inspect the user request, `docs/spec.md`,
 3. Keep project reports, exports, figures, and agent-produced deliverables in
    the project's `docs/artifacts/`; use structured knowledge capture only for
    enduring cross-project material worth linking.
-4. Respect "no escalation" directives: use a self-correcting loop when
-   suitable rather than assuming human intervention after a failure.
+4. Load `execution` before applying behavior modifiers found in the user's
+   message.
 
 ---
 
@@ -105,67 +105,3 @@ When in doubt, keep working on the real problem rather than substituting an
 inferior alternative.
 
 ---
-
-## 3. Interaction Modes (Key Phrases)
-
-Before execution, actively scan the user's full message for the modifiers
-below. They can occur anywhere and still apply unless the user explicitly limits or negates
-them. Reporting and escalation modifiers combine as specified below.
-
-**Regardless of mode, always report the final outcome.** The user must always
-know what happened — completion, partial completion, or explicit failure with
-reason.
-
-- **"fast feedback"** — Claw writes status updates more frequently and seeks
-guidance / escalates earlier than default thresholds. Use when the user wants
-tight steering.
-- **"low escalation"** — Claw makes autonomous decisions and reports only at
-natural completion points. Do not escalate early even if "fast feedback" is
-also present.
-- **"no escalation"** — Claw must self-resolve. Do not ask the user for help.
-See Section 2 for full rules.
-- **"report milestones"** — Claw explicitly lists all milestones reached so far
-before continuing or before the final summary.
-- **"evaluate harness"** — Claw performs the requested work while deliberately
-observing how skills, system instructions, tools, routing, compaction, and
-reporting mechanisms affect its choices and result quality. It records only
-concrete, reusable findings or failures in
-`$VAULT_PATH/Knowledge/workflow-reflection.md`, using `capture-knowledge`
-discipline, and mentions material findings in its final report.
-
-### Default (no phrase)
-- Report at natural milestones and on completion.
-- Escalate after 3 failed attempts or >60 min blocked.
-
-### "fast feedback" in effect
-- Report after every significant sub-step.
-- Escalate or seek guidance after **1 failed attempt** or **>20 min blocked**.
-- Ask the user on ambiguous decisions rather than guessing.
-- If combined with "low escalation", keep reporting frequently but decide
-autonomously.
-
-### "low escalation" in effect
-- Report at natural milestones only.
-- Do not escalate early.
-- Make decisions autonomously.
-- If combined with "fast feedback", reporting stays high but escalation stays
-deferred.
-- If combined with "no escalation", "no escalation" wins: do not escalate at
-all. Keep reporting frequently.
-
-### "no escalation" in effect
-- Report completion, partial completion, or explicit failure with reason.
-- If combined with "fast feedback", report frequently. If combined with "low
-escalation", report at milestones only.
-
-### "report milestones" in effect
-- Before continuing, list all milestones reached in this session.
-- Before the final reply, include a "Milestones reached" section.
-- This is additive: it layers on top of whatever other mode is active.
-
-### "evaluate harness" in effect
-- Continue to prioritize the user's actual task; harness evaluation is an
-  observational overlay, not a replacement objective.
-- Note specific beneficial behavior, friction, failure, or improvement ideas
-  supported by the run rather than writing generic commentary.
-- Do not append anything when the run reveals no reusable harness lesson.

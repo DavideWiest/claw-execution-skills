@@ -8,9 +8,9 @@ description: Use as the primary execution skill for implementing, resuming, fixi
 ## Purpose
 
 Implement or resume work on a project and carry it through verified
-milestones. Use `entrypoint` for lifecycle selection, interaction
-modifiers, and escalation policy; use this skill as the ordinary working path
-once implementation, repair, or validation is underway.
+milestones. Use `entrypoint` for lifecycle selection and escalation policy;
+use this skill as the ordinary working path and source of truth for behavior
+modifiers once implementation, repair, or validation is underway.
 
 ## Workflow
 
@@ -40,21 +40,34 @@ once implementation, repair, or validation is underway.
 - Milestones record completed phases, meaningful verification, blockers, and
   final results, not a stream of command output.
 
-### 3. Execute Or Delegate
+### 3. Order Work By Dependencies
+
+- The user's specifications may not be in executable order. Follow task
+  dependencies first: identify which assumptions, components, or results
+  must work before later work is meaningful.
+- Fail fast on pivotal premises and dependencies. Prefer a bounded test that
+  validates or invalidates an approach before expensive implementation.
+- Prioritize foundational and structure-determining work over polish or
+  optimization: do high-temperature decisions first, then low-temperature
+  tuning within a validated structure.
+- Use bounded experiments where evidence is needed; load `test-hypothesis`
+  when it fits. One or two well-motivated retries are acceptable, but do not
+  continue from sunk cost alone.
+
+### 4. Execute Or Delegate
 
 - For narrow direct work, implement, test, and update state yourself.
 - For meaningful delegated work, apply `supervising` to define acceptance
   checks, worker scope, and notification route.
-- Use `coding-agent` to launch a background Codex worker by default. Ask it to
-  maintain one worker-owned `docs/worker-report.md` and send a completion
-  notification with the outcome, verification, and any blocker requiring a
-  decision.
+- Follow `supervising` when selecting Codex or Kimi. For file-based delegated
+  work, ask the worker to maintain one worker-owned `docs/worker-report.md`
+  and send a completion notification with outcome, verification, and blockers.
 - Use `sessions_send` instead of the handoff file only after a live round-trip
   test has passed in the current runtime.
 - When resuming delegated work, check native session state and ask the worker
   to resume prior context when useful.
 
-### 4. Review And Iterate
+### 5. Review And Iterate
 
 - Fix bugs and failing tests
 - Remove dead code from pivots
@@ -65,7 +78,7 @@ once implementation, repair, or validation is underway.
 - Retry only after identifying a specific transient or fixable cause.
 - Commit incrementally with clear messages. Commit under the user's name.
 
-### 5. Record And Report
+### 6. Record And Report
 
 - Update `docs/spec.md` with completed features
 - After checking evidence, update Claw-owned `docs/progress.md` with material
@@ -74,6 +87,56 @@ once implementation, repair, or validation is underway.
   `capture-knowledge` only for durable structured knowledge worth linking
   beyond project working state
 - Report start, meaningful milestones when requested, and final outcome.
+
+## Behavior Modifiers
+
+Before execution, actively scan the user's full message for these modifiers.
+They can occur anywhere and apply unless explicitly limited or negated.
+Regardless of mode, always report the final outcome.
+
+- **"verify approach"** (also accept the literal typo **"veriy approach"**) —
+  Before beginning substantive execution, respond once with this fixed
+  structure and wait for feedback:
+
+  ```markdown
+  **Partial** - Verifying approach before execution.
+
+  Approach: <one short sentence or paragraph describing the planned approach>
+
+  Key things to look out for:
+  - Fork: <important alternative or decision point, or "none identified">
+  - Possible blocker: <dependency, uncertainty, or "none identified">
+
+  Feedback requested: confirm this approach or identify a correction.
+  ```
+
+- **"fast feedback"** — Report after every significant sub-step and escalate
+  or seek guidance after 1 failed attempt or more than 20 minutes blocked.
+- **"low escalation"** — Report at natural milestones and make autonomous
+  decisions; do not escalate early.
+- **"no escalation"** — Self-resolve without asking the user for help; follow
+  the no-escalation policy in `entrypoint`.
+- **"report milestones"** — Before continuing and before the final reply,
+  list milestones reached in this session.
+- **"evaluate harness"** — While doing the actual task, record only concrete,
+  reusable harness findings or failures in
+  `$VAULT_PATH/Knowledge/workflow-reflection.md` using `capture-knowledge`
+  discipline; do not write filler.
+
+If `fast feedback` and `low escalation` are combined, report frequently while
+deciding autonomously. If `no escalation` is present, it wins for escalation.
+
+## Failure Biases
+
+- **Complexification**: do not add elaborate machinery when a simpler faithful
+  test or implementation answers the question.
+- **Narrow-sighted design decisions**: do not optimize a local metric or
+  convenient component while ignoring the actual objective, constraints, or
+  later dependencies.
+- **Sunk cost**: do not keep a failing line of work alive merely because time
+  or compute has already been spent on it.
+- **Cheating**: do not drift from the agreed plan, replace hard requirements
+  with easier proxies, or present simulated activity as verified progress.
 
 ## Context Loading Priority
 

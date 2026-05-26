@@ -37,9 +37,17 @@ used, the worker writes only `docs/worker-report.md` for durable reporting.
      a round-trip smoke test has succeeded in the active runtime. The
      2026-05-26 test accepted a send but skipped delivery and returned no
      acknowledgement, so it is not presently a dependable report route.
-   - Use `coding-agent` with Codex by default for substantial coding work;
-     follow its completion/blocker notification contract rather than assuming
-     it exposes an OpenClaw session channel.
+   - Prefer `coding-agent` with Codex for complex or consequential tasks:
+     research, debugging, critical-infrastructure changes, project setup,
+     initial experiments, substantial implementation, or work whose failure
+     could corrupt conclusions or configuration.
+   - Prefer Kimi for simple, bounded, low-risk tasks where the goal and
+     acceptance check are already clear, such as small lookups, routine
+     transformations, or narrowly scoped housekeeping.
+   - Do not select a cheaper worker when uncertainty, blast radius, or the
+     need for independent technical judgment makes Codex the safer route.
+     Follow each route's reporting contract rather than assuming it exposes
+     an OpenClaw session channel.
 
 ## During And After Work
 
