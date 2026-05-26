@@ -41,7 +41,7 @@ modifiers once implementation, repair, or validation is underway.
 - Milestones record completed phases, meaningful verification, blockers, and
   final results, not a stream of command output.
 
-### 3. Order Work By Dependencies
+### 3. Order Work 
 
 - The user's specifications may not be in executable order. Follow task
   dependencies first: identify which assumptions, components, or results
@@ -68,6 +68,7 @@ modifiers once implementation, repair, or validation is underway.
   test has passed in the current runtime.
 - When resuming delegated work, check native session state and ask the worker
   to resume prior context when useful.
+- Commit and push frequently after every major task completion.
 
 ### 5. Review And Iterate
 
@@ -139,6 +140,9 @@ deciding autonomously. If `no escalation` is present, it wins for escalation.
   or compute has already been spent on it.
 - **Cheating**: do not drift from the agreed plan, replace hard requirements
   with easier proxies, or present simulated activity as verified progress.
+- **Stupid design decisions**: Design decisions that are obviously stupid when
+  reflecting, such as implementations are the vastly less performant then 
+  proper ones.
 
 ## Rules
 
