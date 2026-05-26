@@ -9,15 +9,15 @@ extension.
 | Skill | Purpose |
 | --- | --- |
 | `execution-guidance` | Select lifecycle, execution pattern, interaction modifiers, and escalation policy. |
-| `supervising-delegated-work` | Establish ownership, reporting routes, and independent acceptance. |
+| `supervising` | Establish ownership, reporting routes, and independent acceptance. |
 | `multi-step-execution` | Manage milestone-based delegated implementation. |
-| `metric-multi-step-execution` | Run controlled metric-driven optimization loops. |
-| `project-initiation` | Establish lean project-local specification and scaffolding. |
-| `project-iteration` | Resume and improve existing project work. |
-| `project-wrapup` | Clean, validate, document, package artifacts, and recommend publication paths. |
+| `autoresearch-loop` | Explore scientific premise-testable ideas or blind downstream-search candidates reproducibly. |
+| `exec-initiation` | Establish lean project-local specification and scaffolding. |
+| `exec-iteration` | Resume and improve existing project work. |
+| `exec-wrapup` | Clean, validate, document, package artifacts, and recommend publication paths. |
 
 `single-step-execution` is intentionally omitted: narrow work is covered
-directly by `execution-guidance` plus `supervising-delegated-work`, and the
+directly by `execution-guidance` plus `supervising`, and the
 former skill contained no domain-specific guidance.
 
 Delegated workers currently report through one worker-owned

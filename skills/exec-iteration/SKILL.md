@@ -1,9 +1,9 @@
 ---
-name: project-iteration
+name: exec-iteration
 description: "Resume existing project: fix, refactor, continue."
 ---
 
-# Project Iteration Skill
+# Execution Iteration
 
 ## Purpose
 Resume work on an existing project and improve it.
@@ -37,7 +37,7 @@ Resume work on an existing project and improve it.
 ### 4. Resume Delegated Work
 
 - Check native OpenClaw session state for existing worker context when relevant.
-- Apply `supervising-delegated-work` when dispatching or resuming a worker.
+- Apply `supervising` when dispatching or resuming a worker.
 - Ask the worker to resume prior context when useful and report completion.
 - Update project state after reviewing delegated results.
 

@@ -1,9 +1,9 @@
 ---
-name: supervising-delegated-work
+name: supervising
 description: Use when delegating implementation, analysis, or review work to a worker or subagent.
 ---
 
-# Supervising Delegated Work
+# Supervising
 
 This skill owns the delegation contract and supervision mechanics. Use
 `execution-guidance` to choose the work mode and escalation policy; do not
@@ -48,6 +48,9 @@ used, the worker writes only `docs/worker-report.md` for durable reporting.
   worker-owned `docs/worker-report.md` with milestones, checks, results, and
   blockers. Claw verifies its integrity and evidence before transferring
   accepted facts into `docs/progress.md`.
+- If independent tests run in parallel while using that file fallback,
+  dispatch one coordinating worker to aggregate their results; never allow
+  concurrent workers to write the same handoff file.
 - Before accepting a result, inspect the actual work and run or examine the
   relevant verification. Check specification compliance before code quality or
   narrative polish.

@@ -14,7 +14,7 @@ how to behave when blocked, and when to escalate vs. self-resolve.
 **Read this skill first** for coding, ML research, or build tasks. It is the
 source of truth for work-mode selection, project lifecycle, and escalation. If
 work is delegated, read
-`supervising-delegated-work` for role separation, route selection,
+`supervising` for role separation, route selection,
 notification, and acceptance responsibilities.
 
 ### Reasoning Level
@@ -38,16 +38,16 @@ exclusive choice:
 | Project lifecycle | Use Section 4 when initiating, iterating, or wrapping a project. |
 | Primary execution pattern | Choose one from the table below for how work runs. |
 | Domain overlay | Add `machine` or scientific skills when the domain requires them. |
-| Delegation contract | Load `supervising-delegated-work` whenever a worker or subagent is dispatched. |
+| Delegation contract | Load `supervising` whenever a worker or subagent is dispatched. |
 
 ### Primary Execution Pattern
 
 | Task Type | Pattern |
 |-----------|---------|
 | Long non-agent shell/I/O operation: download, installation, data preparation, export, sync, or ordinary build | `background-task-execution` |
-| Narrow implementation/review with clear acceptance checks and one worker run | Direct supervised execution using `supervising-delegated-work` when delegated |
+| Narrow implementation/review with clear acceptance checks and one worker run | Direct supervised execution using `supervising` when delegated |
 | Multi-phase implementation/review with milestones or broader risk | `multi-step-execution` |
-| Low-temperature iterative tuning — hyperparameters, lr sweeps, batch size search | `metric-multi-step-execution` |
+| Iterative idea testing or optimization with comparable outcomes, including scientific premise testing or blind downstream search such as hyperparameter tuning | `autoresearch-loop` |
 
 ### Domain Overlays
 
@@ -60,10 +60,10 @@ exclusive choice:
 ### Rules For Selection
 
 1. Choose one primary execution pattern; add applicable domain overlays.
-2. Read `supervising-delegated-work` before dispatching a worker or subagent.
+2. Read `supervising` before dispatching a worker or subagent.
 3. If unsure between coding patterns, prefer `multi-step-execution`.
 4. Respect "no escalation" directives: if the user has forbidden escalating,
-   prefer patterns that allow self-correction (`metric-multi-step-execution`,
+   prefer patterns that allow self-correction (`autoresearch-loop`,
    `multi-step-execution` with retries) over patterns that assume human
    intervention on failure.
 
@@ -71,7 +71,7 @@ exclusive choice:
 
 - `background-task-execution` owns launch, status, and completion rules for
   long non-agent commands.
-- `supervising-delegated-work` owns communication and acceptance rules for
+- `supervising` owns communication and acceptance rules for
   workers and subagents.
 - Scientific overlay skills own experimental validity and claim boundaries.
 
@@ -117,8 +117,7 @@ inferior alternative.
 ## 3. Interaction Modes (Key Phrases)
 
 Before execution, actively scan the user's full message for the modifiers
-below. They can occur anywhere, including a sentence, parenthetical, bullet,
-or side-note, and still apply unless the user explicitly limits or negates
+below. They can occur anywhere and still apply unless the user explicitly limits or negates
 them. Reporting and escalation modifiers combine as specified below.
 
 **Regardless of mode, always report the final outcome.** The user must always
@@ -191,10 +190,10 @@ skip stages.
 
 | Stage | Check | Skill |
 |-------|-------|-------|
-| Initiate | No `docs/spec.md` exists | `project-initiation` |
+| Initiate | No `docs/spec.md` exists | `exec-initiation` |
 | Build | Spec exists, no working code | Pattern from Section 1 → delegate |
-| Iterate | Code exists, tests failing or blockers | `project-iteration` |
-| Wrapup | Core done, needs evaluation/plots/docs | `project-wrapup` |
+| Iterate | Code exists, tests failing or blockers | `exec-iteration` |
+| Wrapup | Core done, needs evaluation/plots/docs | `exec-wrapup` |
 
 ### Rules
 

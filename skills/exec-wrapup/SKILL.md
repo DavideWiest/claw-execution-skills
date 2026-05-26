@@ -1,9 +1,9 @@
 ---
-name: project-wrapup
+name: exec-wrapup
 description: Use when a project is working and needs evaluation, cleanup, documentation, artifacts, or a publication plan.
 ---
 
-# Project Wrapup
+# Execution Wrapup
 
 ## Purpose
 Make the project defensible, reproducible, publishable, and easy to reuse.

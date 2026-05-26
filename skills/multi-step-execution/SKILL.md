@@ -7,7 +7,7 @@ description: Manage milestone-based coding work delegated through the native cod
 
 ## Purpose
 
-Apply the contract in `supervising-delegated-work`. This skill adds only the
+Apply the contract in `supervising`. This skill adds only the
 multi-phase project workflow: milestones, persistent progress, and completion
 handling.
 
@@ -16,7 +16,7 @@ handling.
 1. Write or update the concrete project requirements in `docs/spec.md`, and
    decide whether Claw should maintain `docs/progress.md` for verified
    milestones.
-2. Apply `supervising-delegated-work` to define acceptance checks, worker
+2. Apply `supervising` to define acceptance checks, worker
    scope, and notification route.
 3. Use `coding-agent` to launch a background Codex worker by default. Ask it
    to maintain one worker-owned `docs/worker-report.md` and send a completion
