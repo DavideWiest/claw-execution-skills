@@ -121,7 +121,7 @@ Regardless of mode, always report the final outcome.
   the no-escalation policy in `entrypoint`.
 - **"report milestones"** — Before continuing and before the final reply,
   list milestones reached in this session.
-- **"evaluate harness"** — While doing the actual task, record only concrete,
+- **"evaluate harness"** — While doing the actual task, record concrete,
   reusable harness findings or failures in
   `$VAULT_PATH/Knowledge/workflow-reflection.md` using `capture-knowledge`
   discipline; do not write filler.
