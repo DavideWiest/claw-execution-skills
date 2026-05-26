@@ -8,16 +8,15 @@ extension.
 
 | Source Skill | Visible Runtime Name | Purpose |
 | --- | --- | --- |
-| `execution-guidance` | `exec-guidance` | Select lifecycle, execution pattern, interaction modifiers, and escalation policy. |
+| `execution` | `exec-execution` | Primary implementation, repair, validation, continuation, and milestone workflow. |
+| `execution-guidance` | `exec-guidance` | Select lifecycle, interaction modifiers, and escalation policy. |
 | `supervising` | `exec-supervising` | Establish ownership, reporting routes, and independent acceptance. |
-| `multi-step-execution` | `exec-multi-step` | Manage milestone-based delegated implementation. |
 | `autoresearch-loop` | `exec-autoresearch-loop` | Explore scientific premise-testable ideas or blind downstream-search candidates reproducibly. |
 | `initiation` | `exec-initiation` | Establish lean project-local specification and scaffolding. |
-| `iteration` | `exec-iteration` | Resume and improve existing project work. |
 | `wrapup` | `exec-wrapup` | Clean, validate, document, package artifacts, and recommend publication paths. |
 
 `single-step-execution` is intentionally omitted: narrow work is covered
-directly by `execution-guidance` plus `supervising`, and the
+directly by `execution` plus `supervising`, and the
 former skill contained no domain-specific guidance.
 
 Delegated workers currently report through one worker-owned

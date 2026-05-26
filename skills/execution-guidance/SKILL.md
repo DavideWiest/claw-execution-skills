@@ -1,6 +1,6 @@
 ---
 name: execution-guidance
-description: Use for coding, research, or build execution to choose lifecycle stage, execution pattern, and escalation or interaction mode.
+description: Use when orienting coding, research, or build work to choose lifecycle stage and apply escalation or interaction policy.
 ---
 
 # Execution Guidance Skill
@@ -13,9 +13,10 @@ workers, and independently verifies results before reporting success. It does
 not silently replace a worker on substantial delegated work merely because it
 could make edits itself.
 
-Read this skill first for coding, ML research, or build tasks. It is the
-source of truth for project lifecycle, execution selection, interaction
-modifiers, and escalation.
+Read this skill when orienting a coding, ML research, or build task. It is the
+source of truth for lifecycle selection, interaction modifiers, and
+escalation. Use `execution` as the primary implementation and continuation
+skill once work is underway.
 
 ### Reasoning Level
 
@@ -39,7 +40,7 @@ in an existing project, inspect the user request, `docs/spec.md`,
 | Situation Found | What To Do | Lifecycle Skill |
 | --- | --- | --- |
 | Blank/new project or no `docs/spec.md` | Establish requirements and only the necessary scaffold before implementation. | `initiation` |
-| Existing project with a new task, incomplete work, failing checks, or a resumed handoff | Read the specification and accepted progress, verify any worker report, then continue or correct the work. | `iteration` |
+| Existing project with a new task, incomplete work, failing checks, or a resumed handoff | Read the specification and accepted progress, verify any worker report, then continue or correct the work. | `execution` |
 | Working project whose central work is done and needs evaluation, documentation, cleanup, or publication planning | Finalize defensibility, reproducibility, artifacts, and dissemination recommendations. | `wrapup` |
 
 ### Step 2: Add Only Distinct Capabilities
@@ -48,7 +49,6 @@ in an existing project, inspect the user request, `docs/spec.md`,
 | --- | --- | --- |
 | Any delegated worker or subagent | `supervising` | Worker scope, reporting route, acceptance boundary, and Claw's independent review. |
 | Long non-agent command such as a download, installation, export, sync, or build | `background-task-execution` | Non-blocking launch, bounded status checking, and completion handling. |
-| Multi-phase implementation or review with milestones or broader risk | `multi-step-execution` | Delegated phase and milestone flow. |
 | Comparable iterative idea testing, including scientific premise validation or blind downstream search such as hyperparameter tuning | `autoresearch-loop` | Experiment-loop regime, baseline comparison, keep/discard decisions, and safe parallel search. |
 | ML runs, datasets, or compute-heavy local work | `machine` | Machine-specific placement, bottleneck diagnosis, and throughput/parallelism measurement. |
 | Work intended to support a scientific or ML knowledge claim | `scientific-work` | Method validity, evidence boundaries, and claim discipline. |
@@ -56,11 +56,11 @@ in an existing project, inspect the user request, `docs/spec.md`,
 
 ### Step 3: Execute Under The Contract
 
-1. For narrow work that does not need a worker, execute directly and verify.
+1. For implementation, repair, validation, or resumed project work, use
+   `execution`; it covers direct work and milestone-based delegation.
 2. Before dispatching meaningful work, load the delegation contract and give
    the worker scope, acceptance checks, relevant files, and its report route.
-3. If unsure whether coding work needs phases, choose the multi-step path.
-4. Respect "no escalation" directives: use a self-correcting loop when
+3. Respect "no escalation" directives: use a self-correcting loop when
    suitable rather than assuming human intervention after a failure.
 
 ---
