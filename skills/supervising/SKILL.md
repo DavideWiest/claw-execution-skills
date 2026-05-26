@@ -6,7 +6,7 @@ description: Use when delegating implementation, analysis, or review work to a w
 # Supervising
 
 This skill owns the delegation contract and supervision mechanics. Use
-`execution-guidance` to choose the work mode and escalation policy; do not
+`entrypoint` to choose the work mode and escalation policy; do not
 redefine those decisions here.
 
 ## Ownership Contract

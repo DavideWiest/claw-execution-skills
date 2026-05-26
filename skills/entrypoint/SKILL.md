@@ -1,9 +1,9 @@
 ---
-name: execution-guidance
+name: entrypoint
 description: Use when orienting coding, research, or build work to choose lifecycle stage and apply escalation or interaction policy.
 ---
 
-# Execution Guidance Skill
+# Execution Suite Entrypoint
 
 ## Purpose
 
@@ -53,6 +53,7 @@ in an existing project, inspect the user request, `docs/spec.md`,
 | ML runs, datasets, or compute-heavy local work | `machine` | Machine-specific placement, bottleneck diagnosis, and throughput/parallelism measurement. |
 | Work intended to support a scientific or ML knowledge claim | `scientific-work` | Method validity, evidence boundaries, and claim discipline. |
 | One uncertain empirical premise requiring a baseline and controlled intervention | `test-hypothesis` | Faithful single-hypothesis comparison. |
+| Durable cross-project result, decision, attributed belief, or dead end | `capture-knowledge` | Linked structured vault note without duplication or activity logging. |
 
 ### Step 3: Execute Under The Contract
 
@@ -60,7 +61,10 @@ in an existing project, inspect the user request, `docs/spec.md`,
    `execution`; it covers direct work and milestone-based delegation.
 2. Before dispatching meaningful work, load the delegation contract and give
    the worker scope, acceptance checks, relevant files, and its report route.
-3. Respect "no escalation" directives: use a self-correcting loop when
+3. Keep project reports, exports, figures, and agent-produced deliverables in
+   the project's `docs/artifacts/`; use structured knowledge capture only for
+   enduring cross-project material worth linking.
+4. Respect "no escalation" directives: use a self-correcting loop when
    suitable rather than assuming human intervention after a failure.
 
 ---
@@ -165,5 +169,3 @@ escalation", report at milestones only.
 - Note specific beneficial behavior, friction, failure, or improvement ideas
   supported by the run rather than writing generic commentary.
 - Do not append anything when the run reveals no reusable harness lesson.
-
----

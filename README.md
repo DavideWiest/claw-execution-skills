@@ -9,7 +9,7 @@ extension.
 | Source Skill | Visible Runtime Name | Purpose |
 | --- | --- | --- |
 | `execution` | `exec-execution` | Primary implementation, repair, validation, continuation, and milestone workflow. |
-| `execution-guidance` | `exec-guidance` | Select lifecycle, interaction modifiers, and escalation policy. |
+| `entrypoint` | `exec-entrypoint` | Enter the suite: select lifecycle, capabilities, interaction modifiers, and escalation policy. |
 | `supervising` | `exec-supervising` | Establish ownership, reporting routes, and independent acceptance. |
 | `autoresearch-loop` | `exec-autoresearch-loop` | Explore scientific premise-testable ideas or blind downstream-search candidates reproducibly. |
 | `initiation` | `exec-initiation` | Establish lean project-local specification and scaffolding. |

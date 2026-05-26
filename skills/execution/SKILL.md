@@ -8,7 +8,7 @@ description: Use as the primary execution skill for implementing, resuming, fixi
 ## Purpose
 
 Implement or resume work on a project and carry it through verified
-milestones. Use `execution-guidance` for lifecycle selection, interaction
+milestones. Use `entrypoint` for lifecycle selection, interaction
 modifiers, and escalation policy; use this skill as the ordinary working path
 once implementation, repair, or validation is underway.
 
@@ -100,4 +100,4 @@ git commit -m "chore: remove dead code after pivot"
 4. Remove dead code promptly.
 5. Update tests to match new behavior.
 6. If stuck for >60 min, escalate to user.
-7. Escalation policy and alternative-approach rules are defined in the `execution-guidance` skill.
+7. Escalation policy and alternative-approach rules are defined in the `entrypoint` skill.
