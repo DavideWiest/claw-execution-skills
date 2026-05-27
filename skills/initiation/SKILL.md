@@ -12,7 +12,7 @@ Establish a lean project-local source of truth before implementation.
 ## Workflow
 
 1. Identify the goal, constraints, target directory (default
-   `~/main/code/<name>`), and only the stack decisions needed to begin.
+   `~/main/workspace/<name>`), and only the stack decisions needed to begin.
 2. Select a concise first task arc and create
    `<project-dir>/docs/<task-arc>/spec.md` and `progress.md`. Preserve user
    requirements in the spec, record unresolved questions rather than silently
@@ -27,7 +27,7 @@ Establish a lean project-local source of truth before implementation.
    `<project-dir>/docs/<task-arc>/artifacts/` when they are created.
 6. Initialize or publish Git only when requested or already part of the
    agreed project workflow; never publish without approval.
-7. Use `capture-knowledge` only for enduring insight, not to
+7. Use `knowledge-organization` only for enduring insight, not to
    log project creation or running status.
 
 ## Rules

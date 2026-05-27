@@ -22,7 +22,7 @@ Make the project defensible, reproducible, publishable, and easy to reuse.
 - Write final README and documentation, including limitations and how claims
   are supported.
 - Ensure reproducibility (pinned dependencies, seed values, runnable checks).
-- Use `capture-knowledge` to capture durable cross-project conclusions or
+- Use `knowledge-organization` to capture durable cross-project conclusions or
   research directions, linking to project artifacts rather than copying them
   into the vault.
 - Give the user a recommended numbered publishing/publicity plan whose scope

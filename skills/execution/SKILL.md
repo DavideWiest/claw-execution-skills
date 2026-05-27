@@ -17,7 +17,7 @@ modifiers once implementation, repair, or validation is underway.
 ### 1. Identify Project And State
 
 - Project name or path from user input
-- Default lookup: `~/main/code/<project-name>`
+- Default lookup: `~/main/workspace/<project-name>`
 - Verify directory exists
 - Use the task arc selected by `entrypoint`; ensure its
   `docs/<task-arc>/spec.md` and `progress.md` exist before any project work
@@ -87,7 +87,7 @@ modifiers once implementation, repair, or validation is underway.
 - After checking evidence, update Claw-owned `docs/<task-arc>/progress.md`
   with material verified outcomes.
 - Store generated project artifacts in `docs/<task-arc>/artifacts/`; use
-  `capture-knowledge` only for durable structured knowledge worth linking
+  `knowledge-organization` only for durable structured knowledge worth linking
   beyond project working state
 - Report start, meaningful milestones when requested, and final outcome.
 
@@ -123,7 +123,7 @@ Regardless of mode, always report the final outcome.
   list milestones reached in this session.
 - **"evaluate harness"** — While doing the actual task, record concrete,
   reusable harness findings or failures in
-  `$VAULT_PATH/Knowledge/workflow-reflection.md` using `capture-knowledge`
+  `$VAULT_PATH/Knowledge/workflow-reflection.md` using `knowledge-organization`
   discipline; do not write filler.
 
 If `fast feedback` and `low escalation` are combined, report frequently while

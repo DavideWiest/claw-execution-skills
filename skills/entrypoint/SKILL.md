@@ -31,8 +31,8 @@ Use this procedure even when little is known about the project.
 
 ### Step 1: Locate The Project
 
-Identify the project directory from the request; when a new code project has
-no specified location, default to `~/main/code/<project-name>`. Inspect the
+Identify the project directory from the request; when a new project has no
+specified location, default to `~/main/workspace/<project-name>`. Inspect the
 user request, repository state, README, and existing `docs/` task-arc
 directories before deciding the mode of work.
 
@@ -72,7 +72,7 @@ Use `docs/<task-arc>/worker-report.md` for a file-based delegated handoff and
 | ML runs, datasets, or compute-heavy local work | `machine` | Machine-specific placement, bottleneck diagnosis, and throughput/parallelism measurement. |
 | Work intended to support a scientific or ML knowledge claim | `scientific-work` | Method validity, evidence boundaries, and claim discipline. |
 | One uncertain empirical premise requiring a baseline and controlled intervention | `test-hypothesis` | Faithful single-hypothesis comparison. |
-| Durable cross-project result, decision, attributed belief, or dead end | `capture-knowledge` | Linked structured vault note without duplication or activity logging. |
+| Durable cross-project result, decision, attributed belief, or dead end | `knowledge-organization` | Linked structured vault note without duplication or activity logging. |
 
 ### Step 5: Execute Under The Contract
 
