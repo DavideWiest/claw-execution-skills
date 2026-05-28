@@ -50,3 +50,18 @@ Make the project defensible, reproducible, publishable, and easy to reuse.
 5. Ensure someone else can reproduce the results.
 6. Recommend outward-facing actions, but do not publish or post without the
    user's approval of the content and action.
+
+## Writing text and documentation
+
+Always be aware that readers will usually be unfamiliar with the project. 
+Separate internal knowledge, jargon, internal design choices and development 
+environment, from things relevant to the reader.
+For `REAMDE.md`, use a pyramidal structure (most relevant things first, 
+progressively add more detail in dedicated sections), since the reader has 
+limited attention and time. Hence, the core message (finding, story, 
+relevance) should be at the top. Do not overuse tables. 1-2 in the README 
+should suffice. Do not use tables or text-based artifacts as a replacement 
+for clear writing and a clear red thread. Instead, treat them as place for 
+concrete numbers and evidence. Make them minimal, i.e. delete unnecessary
+columns. 
+See the other writing skills for more information.
