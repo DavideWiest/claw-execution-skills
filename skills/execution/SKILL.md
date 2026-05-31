@@ -124,29 +124,6 @@ validation is underway.
 - Use tables when they make metrics, comparisons, or artifact indexes
   clearer than bullets. 
 
-## Project Directives
-
-Before execution, actively scan the user's full message for these project
-directives. They can occur anywhere and apply unless explicitly limited or
-negated. Regardless of mode, always report the final outcome. General
-interaction policy such as fast feedback and approach verification is defined
-in `AGENTS.md` and the `verify-approach` skill.
-
-- **"low escalation"** — Report at natural milestones and make autonomous
-  decisions; do not escalate early.
-- **"no escalation"** — Self-resolve without asking the user for help; follow
-  the no-escalation policy in `entrypoint`.
-- **"report milestones"** — Before continuing and before the final reply,
-  list milestones reached in this session.
-- **"evaluate harness"** — While doing the actual task, record concrete,
-  reusable harness findings or failures in
-  `$VAULT_PATH/Knowledge/workflow-reflection.md` using `knowledge-organization`
-  discipline.
-
-If `fast feedback` from `AGENTS.md` and `low escalation` are combined, report
-frequently while deciding autonomously. If `no escalation` is present, it wins
-for escalation.
-
 ## Failure Modes
 
 - **Unowned slowness**: if a run/program is slow, slower than expected, or a
