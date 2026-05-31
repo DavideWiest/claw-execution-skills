@@ -49,6 +49,9 @@ validation is underway.
   must work before later work is meaningful.
 - Fail fast on pivotal premises and dependencies. Prefer a bounded test that
   validates or invalidates an approach before expensive implementation.
+- Prefer existing, working solutions over writing a custom implementation by
+  default. If an existing solution is hard to set up and the custom version is
+  not too hard to get right, conservatively prefer the custom solution.
 - Prioritize foundational and structure-determining work over polish or
   optimization: do high-temperature decisions first, then low-temperature
   tuning within a validated structure.
@@ -102,8 +105,9 @@ validation is underway.
 - Use reverse chronological bullets by default; insert new entries at the top.
 - Each entry should include type, time, and information, e.g.
   `- IMPLEMENTATION (2026-05-29 14:30): ...`. Allowed types
-  include `INITIATION`, `PIVOT`, `DECISION`, `EXPERIMENT`, `IMPLEMENTATION`, `VERIFICATION`, 
-  `BLOCKER`, `ARTIFACT`, `MILESTONE`, `WRAPUP`. `MILESTONE` is for noting a
+  include `USER`, `INITIATION`, `PIVOT`, `DECISION`, `EXPERIMENT`, `IMPLEMENTATION`, `VERIFICATION`,
+  `BLOCKER`, `ARTIFACT`, `MILESTONE`, `WRAPUP`. `USER` is for logging every
+  user message. `MILESTONE` is for noting a
   milestone has been reached, `DECISION` for notable design decisions.
 - Record important metrics, verification status, decisions, next actions, and
   links to important artifacts so a later session can resume quickly and the
@@ -137,6 +141,11 @@ for escalation.
 
 ## Failure Modes
 
+- **Unowned slowness**: if a run/program is slow, slower than expected, or a
+  computational part becomes prohibitively slow, expensive, unreliable, or a
+  significant bottleneck, attribute it first to Claw's design decisions.
+  Frequent causes: bad design decisions, lazy implementation, or failure to
+  follow the specification or implied approach in the user's request.
 - **Complexification**: do not add elaborate machinery when a simpler faithful
   test or implementation answers the question.
 - **Narrow-sighted design decisions**: do not optimize a local metric or
@@ -158,6 +167,6 @@ for escalation.
 3. Commit at coherent verified milestones.
 4. Remove dead code promptly.
 5. Update tests to match new behavior.
-6. If stuck for >60 min, escalate to user.
+6. If stuck, follow workspace `AGENTS.md` escalation and no-escalation policy.
 7. Use `wrapup` before closing a completed task arc.
-8. Escalation policy and alternative-approach rules are defined in the `entrypoint` skill.
+8. Escalation policy and alternative-approach rules are defined in workspace `AGENTS.md`.

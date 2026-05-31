@@ -14,7 +14,7 @@ extension.
 | `autoresearch-loop` | `exec-autoresearch-loop` | Explore scientific premise-testable ideas or blind downstream-search candidates reproducibly. |
 | `initiation` | `exec-initiation` | Establish lean project-local specification and scaffolding. |
 | `wrapup` | `exec-wrapup` | Clean, validate, document, package artifacts, and recommend publication paths. |
-| `readme-writing` | `exec-readme-writing` | Polish README structure, usability, evidence visibility, and citation placement. |
+| `web-design-guidelines` | `exec-web-design-guidelines` | Review UI code against web interface guidelines. |
 
 `single-step-execution` is intentionally omitted: narrow work is covered
 directly by `execution` plus `supervising`, and the

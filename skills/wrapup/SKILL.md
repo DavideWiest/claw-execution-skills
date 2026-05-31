@@ -41,9 +41,10 @@ and easy to reuse.
 - Write final README and documentation, including limitations and how claims
   are supported.
 - Ensure reproducibility (pinned dependencies, seed values, runnable checks).
-- Use `knowledge-organization` to capture durable cross-project conclusions or
-  research directions, linking to project artifacts rather than copying them
-  into the vault.
+- Extract practical, theoretical, or methodological insights from the arc.
+  Use `knowledge-organization` only for selective cross-project conclusions,
+  research directions, or resources that were both reusable and significantly
+  helpful; link to project artifacts rather than copying them into the vault.
 - Add or update the top row of
   `$VAULT_PATH/Knowledge/task-arc-reflection-log.md` with: task arc, project,
   status (`DONE`, `FAILED`, `SUPERSEDED`, `PARTIAL`, or `ABANDONED`), start
@@ -58,7 +59,7 @@ and easy to reuse.
 - Make results, evidence, and work more visible. Upload or link important
   artifacts where appropriate, inspect plots before presenting them, and make
   plots more meaningful or visually clear when the evidence deserves it.
-- Polish the README with `readme-writing`: put the most important thing for
+- Polish the README with `write-readme-writing`: put the most important thing for
   newcomers at the top, show the result or improvement rather than merely
   describing it, lead with the strongest material, move secondary details later,
   and omit reader-irrelevant internal history.
@@ -69,8 +70,7 @@ and easy to reuse.
   matches the size and maturity of the endeavor. A small internal result may
   warrant a short visibility recommendation; a mature research contribution
   may warrant an article on the personal website, arXiv/preprint release,
-  posts on X and LinkedIn, and a dedicated project information website like
-  the paper companion websites referenced in the Kimi-Claw documentation.
+  posts on X and LinkedIn, and a dedicated project information website/paper companion website.
 
 ## Output
 

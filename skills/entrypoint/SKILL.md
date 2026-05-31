@@ -1,6 +1,6 @@
 ---
 name: entrypoint
-description: Use when orienting coding, research, or build work to choose lifecycle stage and apply escalation or interaction policy.
+description: Use when orienting coding, research, or build work to choose lifecycle stage and execution interaction policy.
 ---
 
 # Execution Suite Entrypoint
@@ -14,8 +14,9 @@ not silently replace a worker on substantial delegated work merely because it
 could make edits itself.
 
 Read this skill when orienting a coding, ML research, or build task. It is the
-source of truth for lifecycle selection and escalation. Use `execution` as
-the primary implementation and continuation skill once work is underway.
+source of truth for lifecycle selection. Use `execution` as the primary
+implementation and continuation skill once work is underway. Escalation and
+blocker policy lives in workspace `AGENTS.md`.
 
 When a task arc reaches its completion criteria, use `wrapup` before treating
 the arc as finished.
@@ -66,6 +67,7 @@ Use `docs/<task-arc>/worker-report.md` for a file-based delegated handoff and
 | Any delegated worker or subagent | `supervising` | Worker scope, reporting route, acceptance boundary, and Claw's independent review. |
 | Comparable iterative idea testing, including scientific premise validation or blind downstream search such as hyperparameter tuning | `autoresearch-loop` | Experiment-loop regime, baseline comparison, keep/discard decisions, and safe parallel search. |
 | ML runs, datasets, or compute-heavy local work | `machine` | Machine-specific placement, bottleneck diagnosis, and throughput/parallelism measurement. |
+| UI implementation or review | `web-design-guidelines` | Accessibility, interaction, layout, and web interface guideline checks. |
 | Work intended to support a scientific or ML knowledge claim | `scientific-work` | Method validity, evidence boundaries, and claim discipline. |
 | One uncertain empirical premise requiring a baseline and controlled intervention | `test-hypothesis` | Faithful single-hypothesis comparison. |
 | Durable cross-project result, decision, attributed belief, or dead end | `knowledge-organization` | Linked structured vault note without duplication or activity logging. |
@@ -95,36 +97,5 @@ Use `docs/<task-arc>/worker-report.md` for a file-based delegated handoff and
 
 ## Rules
 
-### Escalation Policy
-
-Escalate to the user after 3 consecutive failed attempts or if blocked for
->60 minutes.
-
-### "No Escalation" Directive
-If the user explicitly says **"no escalation"** (or any equivalent directive),
-escalation is forbidden. Claw must solve the problem itself.
-
-When "no escalation" is in effect:
-- Continue with additional iterations.
-- Try a well-fitting alternative approach.
-- Explicitly give up on the specific path and document why.
-- **Do not ask the user for help.**
-- **Always report the final outcome** — success, partial success, or failure with
-  reason. "No escalation" does not mean "no reply."
-
-### Choosing an Alternative Approach
-
-An alternative approach is viable only when at least one of these is true:
-- The alternative is a **good fit** for the problem (not a hack).
-- The alternative can serve as a **temporary workaround** that unblocks
-  significant downstream work.
-
-An alternative approach is **NOT viable** when:
-- Downstream decisions depend on **faithful feedback** from the current
-  iteration. If you substitute an inferior approximation, the downstream work
-  will be based on false premises.
-- The problem requires exact execution and any shortcut would violate a
-  specification or scientific requirement.
-
-When in doubt, keep working on the real problem rather than substituting an
-inferior alternative.
+Escalation, no-escalation, blocker, and alternative-approach policy lives in
+workspace `AGENTS.md`.

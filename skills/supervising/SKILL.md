@@ -33,7 +33,8 @@ results. Unless a tested message route is being used, the worker writes only
 1. State the primary task, and label side-questions so they do not silently
    replace the main objective.
 2. Provide the worker with goal, selected task arc, relevant spec/files, scope
-   constraints, acceptance checks, and the reporting or notification route.
+   constraints, strict verify-before-completion checks, and the reporting or
+   notification route.
 3. Choose the execution route:
    - Use native OpenClaw `sessions_send` for bidirectional steering only after
      a round-trip smoke test has succeeded in the active runtime. The
@@ -61,7 +62,8 @@ results. Unless a tested message route is being used, the worker writes only
 - If independent tests run in parallel while using that file fallback,
   dispatch one coordinating worker to aggregate their results; never allow
   concurrent workers to write the same handoff file.
-- Before accepting a result, inspect the actual work closely and sceptically and 
+- Before accepting a result, enforce authoritative verify-before-completion:
+  inspect the actual work closely and sceptically and
   run or examine the relevant verification. Check specification compliance 
   before code quality or narrative polish.
 - For experimental or research work, separately check methodology,
